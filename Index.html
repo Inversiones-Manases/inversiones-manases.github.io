@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inversiones Manases</title>
+
+    <link rel="stylesheet" href="Colores.css" />
+
+    <link rel="stylesheet" href="footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <img src="Perfil.png" alt="Logo Inversiones Manases" class="company-logo" />
+      <h1 class="page-title">Catalogo de Inversiones Manases</h1>
+    </div>
+
+    <div class="content-container"></div>
+
+    <script src="Conten.js"></script>
+
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+    </script>
+
+    <a href="https://wa.me/50433821331" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="WhatsApp">
+  <img src="whatsapp.png" alt="WhatsApp">
+</a>
+
+  </body>
