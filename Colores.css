@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Party+Birthday&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 24px 48px 0;
+
+  /* fondo con imagen */
+  background-image: url('https://img.freepik.com/foto-gratis/pared-estudio-degradado-amarillo-dorado-lujo-bien-utilizado-como-fondo-diseno-banner-presentacion-producto_1258-88923.jpg');
+  background-size: cover;        /* la imagen cubre todo el fondo */
+  background-position: center;   /* centrada */
+  background-repeat: no-repeat;  /* no se repite */
+  background-attachment: fixed;  /* se mantiene al hacer scroll */
+}
+
+
+
+/* ===== ENCABEZADO ===== */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+/* LOGO A LA IZQUIERDA */
+.company-logo {
+  width: 220px;
+  margin-right: 5px;
+}
+
+/* TÍTULO CENTRADO */
+.page-title {
+  flex: 1;
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Party Birthday', cursive;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* ===== CONTENEDOR DEL CATÁLOGO ===== */
+.content-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* ===== TARJETA DEL PRODUCTO ===== */
+.image-container {
+  width: 100%;
+  height: 360px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+}
+
+/* ===== IMAGEN ===== */
+.image-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #f4f4f4;
+  padding: 12px;
+}
+
+/* ===== RECTÁNGULO BLANCO DEL NOMBRE ===== */
+.image-name {
+  height: 110px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .content-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-title {
+    font-size: 48px;
+  }
+
+  .company-logo {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 38px;
+  }
+
+  .company-logo {
+    width: 135px;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 80px;   /* botón más grande */
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  z-index: 1000;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.15);
+  background: #98e298;
+}
+
+.whatsapp-float img {
+  width: 80px;        /* ícono más grande */
+  height: 80px;
+  max-width: none;    /* evita que el navegador lo limite */
+  object-fit: contain; /* mantiene proporción */
+}
