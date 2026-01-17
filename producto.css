@@ -4,11 +4,12 @@
 
 body {
   background-image: url('https://media.istockphoto.com/id/1351895555/photo/orange-and-yellow-gradient-defocused-blurred-motion-abstract-background.jpg?s=612x612&w=0&k=20&c=KuKldcIbHzngAzgf_V_71naU6WJ8hhLEN8GrRv0Khy8=');
-  background-size: cover;        /* la imagen cubre todo el fondo */
-  background-position: center;   /* centrada */
-  background-repeat: no-repeat;  /* no se repite */
-  background-attachment: fixed;  /* se mantiene al hacer scroll */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 /* Logo fijo */
@@ -17,9 +18,10 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 10;
 }
 
-/* Centro real de la página */
+/* Centro real */
 .page-center {
   min-height: 100vh;
   display: flex;
@@ -27,18 +29,18 @@ body {
   align-items: center;
 }
 
-/* Rectángulo blanco centrado */
+/* Rectángulo */
 .product-wrapper {
   max-width: 900px;
-  margin: 100px auto 0 auto; 
   background: #ffffff;
   padding: 25px;
   display: flex;
   gap: 30px;
   border-radius: 8px;
+  margin: 100px auto;
 }
 
-/* ===== Carrusel ===== */
+/* Carrusel */
 .carousel-section {
   width: 50%;
 }
@@ -46,14 +48,14 @@ body {
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 350px; 
+  height: 350px;
   overflow: hidden;
 }
 
 .carousel-slide {
   display: flex;
   height: 100%;
-  transition: transform 0.30s ease;
+  transition: transform 0.3s ease;
 }
 
 .carousel-slide img {
@@ -62,7 +64,6 @@ body {
   object-fit: contain;
 }
 
-/* Botones */
 .prev-btn,
 .next-btn {
   position: absolute;
@@ -79,7 +80,7 @@ body {
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/* Miniaturas en filas de 5 */
+/* Miniaturas */
 .thumbnails {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -91,13 +92,12 @@ body {
 .thumb {
   width: 90px;
   height: 90px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #f5f5f5;
   border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .thumb img {
@@ -107,10 +107,10 @@ body {
 }
 
 .thumb.active {
-  border-color: #000;
+  border: 2px solid #000;
 }
 
-/* ===== Información ===== */
+/* Info */
 .info-section {
   width: 50%;
 }
@@ -127,7 +127,6 @@ body {
 }
 
 .product-title {
-  color: #000;
   margin-bottom: 12px;
 }
 
@@ -146,7 +145,6 @@ body {
 
 .description {
   margin: 18px 0;
-  color: #333;
 }
 
 .price {
@@ -155,72 +153,57 @@ body {
   color: #e86332;
 }
 
-/* ===== Compatibilidad móvil ===== */
+/* =====================
+   AJUSTE REAL PARA MÓVIL
+   ===================== */
 @media (max-width: 768px) {
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .page-center {
+    align-items: center;
+    padding: 20px 0;
+  }
+
   .product-wrapper {
-    flex-direction: column; /* Apila carrusel e info en vertical */
-    margin: 50px 15px;      /* Ajusta márgenes para pantalla pequeña */
-    padding: 20px;
+    flex-direction: column;
+    width: 90%;
+    margin: 0;              /* 🔴 elimina el margen que lo empuja arriba */
   }
 
   .carousel-section,
   .info-section {
-    width: 100%; /* Ambos ocupan todo el ancho */
+    width: 100%;
   }
 
   .carousel-container {
-    height: 250px; /* Reduce la altura del carrusel en móviles */
+    height: 250px;
   }
 
   .thumbnails {
-    grid-template-columns: repeat(4, 1fr); /* Menos miniaturas por fila */
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .thumb {
     width: 70px;
     height: 70px;
   }
-
-  .back-btn {
-    padding: 8px 18px;
-    font-size: 14px;
-  }
-
-  .product-title {
-    font-size: 20px;
-  }
-
-  .price {
-    font-size: 20px;
-  }
 }
 
 @media (max-width: 480px) {
+
   .carousel-container {
-    height: 200px; /* Carrusel aún más pequeño */
+    height: 200px;
   }
 
   .thumbnails {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
   }
 
   .thumb {
     width: 60px;
     height: 60px;
-  }
-
-  .back-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .product-title {
-    font-size: 18px;
-  }
-
-  .price {
-    font-size: 18px;
   }
 }
