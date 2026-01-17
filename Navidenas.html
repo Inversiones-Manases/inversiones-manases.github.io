@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Detalle del Producto</title>
+
+  <!-- OBLIGATORIO para móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="producto.css">
 </head>
 <body>
@@ -12,40 +16,45 @@
     <img src="Perfil.png" class="company-logo">
   </a>
 
-  <div class="product-wrapper">
+  <!-- Contenedor que centra todo -->
+  <div class="page-center">
 
-    <!-- Carrusel lado izquierdo -->
-    <div class="carousel-section">
-      <div class="carousel-container">
-        <button class="prev-btn">&#10094;</button>
+    <div class="product-wrapper">
 
-        <div class="carousel-slide">
-          <img src="navideña 1.jpeg">
-          <img src="navideña2.jpeg">
-          <img src="navideña3.jpeg">
+      <!-- Carrusel lado izquierdo -->
+      <div class="carousel-section">
+        <div class="carousel-container">
+          <button class="prev-btn">&#10094;</button>
+
+          <div class="carousel-slide">
+            <img src="navideña 1.jpeg">
+            <img src="navideña2.jpeg">
+            <img src="navideña3.jpeg">
+          </div>
+
+          <button class="next-btn">&#10095;</button>
         </div>
 
-        <button class="next-btn">&#10095;</button>
+        <div class="thumbnails">
+          <img src="navideña 1.jpeg" class="thumb active">
+          <img src="navideña2.jpeg" class="thumb">
+          <img src="navideña3.jpeg" class="thumb">
+        </div>
       </div>
 
-      <div class="thumbnails">
-        <img src="navideña 1.jpeg" class="thumb active">
-        <img src="navideña2.jpeg" class="thumb">
-         <img src="navideña3.jpeg" class="thumb">
+      <!-- Información lado derecho -->
+      <div class="info-section">
+        <a href="Index.html" class="back-btn">Volver</a>
+
+        <h1 class="product-title">Lámparas Esferas Navideñas</h1>
+
+        <p class="description">
+          Hermosa lámpara navideña decorativa, elaborada con base de madera y esfera de vidrio grabada con láser, perfecta para darle un toque mágico a tu hogar. Su diseño elegante y su iluminación suave la convierten en un regalo ideal para Navidad.
+        </p>
+
+        <p class="price">Precio de Unidad: 120lps</p>
       </div>
-    </div>
 
-    <!-- Información lado derecho -->
-    <div class="info-section">
-      <a href="Index.html" onclick="window.close()" class="back-btn">Volver</a>
-
-      <h1 class="product-title">Lámparas Esferas Navideñas</h1>
-
-      <p class="description">
-        Hermosa lámpara navideña decorativa, elaborada con base de madera y esfera de vidrio grabada con láser, perfecta para darle un toque mágico a tu hogar. Su diseño elegante y su iluminación suave la convierten en un regalo ideal para Navidad.
-      </p>
-
-      <p class="price">Precio de Unidad: 120lps</p>
     </div>
 
   </div>
@@ -53,3 +62,4 @@
   <script src="producto.js"></script>
 </body>
 </html>
+
